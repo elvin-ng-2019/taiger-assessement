@@ -13,7 +13,7 @@
         </div>
         <div class="card-body">
             <h5 class="card-title">name: {{result.name}}</h5>
-            <p v-if="result.description == undefined" class="card-text">no description specified</p>
+            <p v-if="result.description == undefined" class="card-text">no description specified hello hello hello</p>
             <p v-else class="card-description">{{result.description}}</p>
             <a :href='result.html_url' class="btn btn-primary mx-3">visit this repository</a>
             <a :href='result.html_url + "#readme"' class="btn btn-primary">view its readMe</a>
