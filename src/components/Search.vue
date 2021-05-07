@@ -3,7 +3,7 @@
     <input type="text" placeholder="input github user here!" class="mb-4" v-model="userinput" @keyup.enter="doThis()">
     <a class="btn" @click="doThis()">enter</a>
     <br>
-    <h4 v-if="hasSearched" class="mt-3">showing {{resultLength}}  projects from <i>{{userinput}}</i></h4>
+    <h4 v-if="hasSearched" class="mt-3">showing {{resultLength}}  projects from <i>{{confirmeduserinput}}</i></h4>
     <p v-else>not results yet</p>
     <div class="parallax">
     <div v-for="result in resultArray" :key="result.id" class="pt-1">
@@ -31,6 +31,7 @@ export default defineComponent({
   data: function () {
     return {
       userinput: '',
+      confirmeduserinput: '',
       resultArray: [],
       hasSearched: false,
       resultLength: 0
@@ -47,6 +48,7 @@ export default defineComponent({
           this.resultLength = this.resultArray.length
           this.hasSearched = true
           console.log(this.resultArray)
+          this.confirmeduserinput = this.userinput
         })
         .catch(error => alert(error))
     }
